@@ -1,1 +1,38 @@
 1.while 循环
+'''
+语法:
+
+while 表达式:
+    语句-循环体
+'''
+'''
+1,直接写while True ,通过条件去判断结束
+2,当我们写while True 第一件事先写退出条件
+3,代码自上而下执行,但是条件不成立,就不会进去,所以可以把腿很粗条件写在段首
+4,break 退出循环
+5,continue 跳出循环 继续执行
+'''
+比如:
+a=0
+while True:
+    num=int(input("整数"))
+    if num<0:
+        print("请输入正数")
+        continue
+    if num==0:
+        if max<0:
+            print("没有任何正数")
+        if min>0:
+            print(f"最大值{max},最小值{min}")
+            break
+    if num> 0:
+        if a==0:
+            max=num
+            min=num
+            a+=1
+        if a !=0:
+            if num>max or num <min:
+                if num>max:
+                    max=num
+                if num<min:
+                    min=num
