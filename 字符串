@@ -1,1 +1,120 @@
+'''
+字符串不属于容器类型的,但是类似于有序容器类型
+字符串 string
+'''
+from wcwidth import center
 
+# string
+# 1.是有序的,每个地方都有索引值,索引也是从0开始的,向后递增,末尾从-1向前递减
+#
+# 2.字符串 使用的单引号,或者双引号,或者三重引号定义
+#
+# 3.字符串是不可变的(元素是不可修改的)
+
+# 字符串创建
+str1='hello world'
+
+#访问字符串
+print(str1)
+print(str1[5])
+#字符串的切片
+print(str1[0:5])
+#字符串相加
+str2="nihao"
+print(str1+str2)
+#字符串乘法
+print(str1*2)
+#字符串检查成员是否为字符串中元素
+print('lo'in str1)
+print(str1.count('o'))
+print(str1.find('o'))
+
+s='Good Night'
+s2='nice to meet you'
+log ='INFO:2026-04-15:systemstarting'
+multi='line1\nline2\nline3'
+csv='apple,banana,orange'
+print(s.replace('Night','Morning'))
+print(log.split(':'))#split 分隔  (默认从左进行分隔)
+print(log.rsplit(':',1))#也是切割 (从右开始分割,1代表分割1此)
+print(s.strip()) #取出首尾的字符串
+print(s.lstrip()) #去掉左边的字符串
+print(s.rstrip())  #去掉右边的字符串
+print(log.removeprefix('INFO:'))#去掉前缀
+print(log.removesuffix(':systemstarting')) #去掉后缀
+#将字符串 转换为大写
+print(s.upper())
+#将字符串 转换为小写
+print(s.lower())
+#反转字符串大小写
+print(s.swapcase())
+#第一个字母大写 其他字符串小写
+print(s.capitalize())
+# 将每个单次的首字母大写
+print(s.title())
+# 返回字符串的长度
+print(len(s2))
+# 返回最大值最小值
+print(max(s))
+print(min(s))
+#返回第一个x的索引 ,如果不存在,返回-1
+print(s.find('Night'))
+print(s.rfind('Night')) #从右边开始找
+#返回第一个x的索引 ,如果不存在,报错
+print(s.index('Night'))
+#返回x出现的次数
+print(s.count('o'))
+#检查是否以x开头,返回布尔值
+print(s.startswith('G'))
+#检查是否以结尾开头,返回布尔值
+print(s.endswith('o'))
+#检查是否非空,且只包含空白
+print(' '.isspace())
+#居中填充
+print('Hi'.center(7,'-'))#居中
+print('Hi'.ljust(7,'-'))#左
+print('Hi'.rjust(7,'-'))#右
+#右对齐,用0填充
+print('Hi'.zfill(5))
+#\n 是换行的意思
+print(multi)
+#按行分割 打印列表
+print(multi.splitlines())
+#三分割
+print('name=value'.partition('='))
+print('name=value'.partition(','))
+#从右开始三分割
+print('name=value=1'.rpartition('='))
+#验证编码
+print('你好'.encode('utf-8'))
+data={"name":'zhangsan','age':25} #这是一个字典
+print('{name} is {age} years old.'.format(**data))
+#检查是只包含字母,返回布尔值
+print('uygjyg'.isalpha())
+#检查是只包含数字,返回布尔值
+print('Hello'.isdigit())
+#检查是否只包含数字字母,返回布尔值
+print("sdfjkas6da541".isalnum())
+#检查是否是有效的标识符,返回布尔值
+print('Hello'.isidentifier())
+print('888#Hello'.isidentifier())
+#检查字符是否都是大写
+print('HELLO'.isupper())
+#检查字符是否都是小写
+print('hello'.islower())
+#检查字符是否都是数值字符
+'''
+包括L普通数字 0-9
+中午数字 零-九
+罗马数字 I II III
+分数
+'''
+print('一二三'.isnumeric())
+#检查是否标题
+print("Hello World".istitle())
+#使用 maketrans 构建一个映射表   ,再取翻译
+# 使用 maketrans 构建一个映射表   ,再取翻译
+str="hello world"
+str1=str.maketrans('aeiou','12345')
+str2=str.translate(str1)
+print(str2)
