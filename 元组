@@ -1,0 +1,107 @@
+## 元组
+
+![image-20260415144453549](C:\Users\27356\AppData\Roaming\Typora\typora-user-images\1)
+
+> 1.不可变的,有序的元素集合
+>
+> 2.不能对元组中的元素进行修改操作
+>
+> 3.元组使用()定义,数据与数据之间用 , 分割
+>
+> 4.也是有索引的
+
+```python
+tuple1=(100,200,300) #元组是不可变的
+print(id(tuple1),tuple1)
+tuple1=typle+(1,2,3)
+print(id(tuple1),tuple1)
+```
+
+```python
+tuple2=(100,200,300,[1,2,3])#里面如果有可变元素的话,可以针对可变元素进行修改
+print(id(tuple2),tuple2)
+tuple2[3].append(4)
+print(id(tuple2),tuple2)
+```
+
+```python
+#创建元组
+tuple1=(100,200,300,400,500)
+print(tuple1)
+tuple2=(100,) #如果只包含一个元素,我们需要在元素后面添加逗号
+print(tuple2)
+
+#通过推导式创建元组
+tuple_generator = ( x for x in range(10))
+print(tuple_generator)#获取生成器对象
+tuple3=tuple(tuple_generator)#转换为元组
+print(tuple3) 
+```
+
+```python
+#访问元组
+tuple1=(100,200,300,400,500)
+print(tuple1[2])  # 300
+print(tuple1[-1]) # 500
+print(tuple1[2:4])# (300,400)
+
+```
+
+```python
+#元组的相加
+tuple1=(100,200,300)
+tuple2=("a","b","c")
+print(tuple1+tuple2)
+
+#元组的相乘
+print(tuple*2)  #(100,200,300,100,200,300)
+
+#检查成员是否为元组的元素
+print(300 in tuple1)
+
+#获取元组长度
+print(len(tuple1))
+
+#遍历元组
+for i in tuple1
+	print(i)
+##或者
+for i in range(len(tuple1))
+	print(i,tuple[i])
+    
+#count方法 统计元素出现的次数
+tuple4=(1,6,2,8,3,9,7,5,6)
+print(tuple4.count(2))
+
+#index 查找元素第一次出现的索引
+tuple5=(10,20,30,40,50,60,70,20,40)
+print(tuple5.index(20))
+print(tuple5.index(40,2))#从索引算查找40
+
+
+#max 和 min 方法
+tuple5=(10,20,30,40,50,60,70,20,40)
+print(max(tuple5))
+print(min(tuple5))
+
+#sum 求和
+tuple5=(10,20,30,40,50,60,70,20,40)
+print(sum(tuple5))
+
+#sorted() 排序
+print(sorted(tuple5)) 默认为升序
+print(sorted(tuple5,reverse=True)) # 降序
+
+#解包  --将元组元素赋值给变量
+t=(10,20,30)
+a,b,c=t
+print(a,b,c)
+
+#使用*获取剩余元素
+t=(1,2,3,4,5)
+first,*rest=t
+print(rest)  #[2,3,4,5]
+```
+
+
+
